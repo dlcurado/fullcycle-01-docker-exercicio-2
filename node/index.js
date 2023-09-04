@@ -49,7 +49,7 @@ async function getNames() {
 async function addName(name) {
   //const connection = mysql.createPool(process.env.DB_CONNECTION);
   const sql = 'INSERT INTO people(name) values(?);'
-  connection.query(sql, name)
+  await connection.query(sql, name)
   //connection.end()
 }
 
