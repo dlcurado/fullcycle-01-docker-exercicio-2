@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const mysql = require('mysql2/promise')
+const random_name = require('node-random-name')
 
 const app = express()
 const port = 3000
@@ -17,6 +18,7 @@ const connection = mysql.createPool(process.env.DB_CONNECTION);
 console.log(process.env.DB_CONNECTION);
 
 app.get('/', async (req, res)=>{
+  await addName(random_name());
   const namelist = await getNames();
   //res.json(namelist);
   var resultado = '<h1>Full Cycle Rocks!</h1>'
