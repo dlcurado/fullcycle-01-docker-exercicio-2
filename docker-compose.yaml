@@ -27,7 +27,7 @@ services:
     volumes:
       - ./node:/usr/src/app
     tty: true
-    entrypoint: wait-for mysqldb:3306 -t 40 -- ./start.sh
+    entrypoint: wait-for mysqldb:3306 -t 40
     networks:
       - nginxnodenet
     depends_on:
