@@ -8,6 +8,9 @@ RUN npm install express
 RUN npm install dotenv
 RUN npm install mysql2
 RUN npm install node-random-name
+RUN apt install -y wget netcat-traditional
+RUN wget -q -O /usr/bin/wait-for https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for
+RUN chmod +x /usr/bin/wait-for
 
 COPY . .
 
